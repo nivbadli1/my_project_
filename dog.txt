@@ -4,3 +4,4 @@ hello dog line 3
 hello dog line 4
 hello dog line 5
 hello dog line 6
+hello dog line 3
