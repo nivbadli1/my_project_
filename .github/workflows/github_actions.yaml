@@ -1,0 +1,14 @@
+name: learn-github-actions # The name of the job
+on: [push] # The triggering event: pushing to any branch
+jobs:
+  check-bats-version: # a single job called check-bats-version
+    runs-on: ubuntu-latest # using the ubuntu-latest container image
+    steps:
+      - uses: actions/checkout@v3 # git checkout the code of the repository (default to main branch)
+      - uses: actions/setup-node@v3 # install node JS
+        with:
+          node-version: '14' # pass a value to the node-version argument of the action
+      - run: npm install -g bats # run a script that installs the bats package
+      - run: | # multiline script
+          echo "testing bats version:" # print a message
+          bats -v # print the version
